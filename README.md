@@ -1,5 +1,5 @@
 # basic-vulnerabilities-Metasploitable
-## FileUploadVulnerability
+## File Upload Vulnerability
 - weevely is a tool used for opening the backdoors and to access the website.
 ```
 weevely generate 123456 /root/shell.php
