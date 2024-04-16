@@ -1,4 +1,4 @@
-# basic-vulnerabilities-Metasploitable
+# basic vulnerabilities in Metasploitable
 ## File Upload Vulnerability
 - weevely is a tool used for opening the backdoors and to access the website.
 ```
