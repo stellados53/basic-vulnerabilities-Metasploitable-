@@ -93,6 +93,33 @@ http://192.168.11.129/dvwa/vulnerabilities/fi/?page=/../../../../../var/log/apac
 - then we get the final reverse connection to the webserver..
 > ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/5ce2bbdf-bd7f-407f-9bbb-7945b1662342)
 
+<h3 align="center"> ... </h3> 
+
+## Remote File Inclusion Vulnerability
+
+- Similar to local file inclusion.
+- But allows an attacker read ANY file from ANY server.
+- Execute php files from other servers on the current server.
+- Store php files on other servers as .txt
+
+- Firstly we should go the the metaspoitable manchine and run.
+```
+sudo nano /etc/php5/cgi/php.ini
+```
+- This allows the url for the remote file inclusion.
+- ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/2a55caff-d69e-43ee-8980-258d3d95ddef)
+- Now run `ctrl+W` this allows you to search any line in the output.
+- Now run `allow_url` this searches the allow_urlf as mentioned in the above image.
+- Make sure that they both are ON, if not change it and run `ctrl+X` then `Y`.
+- Then to save the location `ctrl+T` then select `php.ini`.
+- Then click enter.
+- Now we have to restart the webserver so that the changes work properly. Run the command.
+```
+sudo /etc/init.d/apache2 restart
+```
+- ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/a815f59d-b4a3-4b53-aa9b-41bc7fdaf015)
+- FINISHED!!
+
 
 
 
