@@ -165,10 +165,20 @@ https://www.youtube.com/watch?v=tYmDiz0SPaw&feature=youtu.be
 - now at the admin page type your username and at the password keep `'` and try to login it retrives as shown in the image
 - ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/a2799618-c66e-481a-af55-a292f9228402)
 - If we get this page it is very easy to do sql injection.
-- And now again logout. and keep the following notepad
-- ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/a2ec20c7-88cd-485f-be71-99f1c763629c)
-- this is basically called blackbox testing. there will be no code to be executed or URLs to be editing.
-- 
-- 
+- And now again logout.
+
+> __LOW SECURITY__ :
+> and keep the following notepad passcodes.
+> ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/a2ec20c7-88cd-485f-be71-99f1c763629c)
+> this is basically called blackbox testing. there will be no code to be executed or URLs to be editing.
+> 
+>__MEDIUM SECURITY__:
+> Now click on TONGLE SECUIRTY which increases the security code.
+> Now, we can not expliot using low security..so to do exploiting we use burpsuite.
+> Open burpsuite, when try to login using the LOW-SECURITY techinques it retrives a error without sending the packet to the burpsuite because it contains special characters.
+> To by pass the code we should type the password with any special characters. Now clicking on login the packet is sent to the burpsuite.
+> Now we should modify the password with our notepad passcodes in the `request body parameter` > `password` > [change the value, make sure the `or ` should be specified] > `apply changes` > `forward`.
+>  ![image](https://github.com/stellados53/vulnerabilities-Metasploitable-/assets/142677726/47cd4466-c4d8-42e3-8a94-c68a29e4a548)
+> 
 
 
